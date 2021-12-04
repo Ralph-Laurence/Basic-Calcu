@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/jquery-3.6.0.min.js"></script>
+    <script src="assets/solve.js"></script>
+</head>
+<body>
+    <div class="calculator-wrapper">
+        <div class="upper-bezel">
+            <div class="bezel-group-left">
+                <div class="logo-name">CASIO</div>
+                <div class="model-name">SX-300</div>
+            </div>
+            <div class="bezel-group-right">
+                <div class="solar-panel">
+                    <div class="solar-cell solar-cell-start"></div>
+                    <div class="solar-cell"></div>
+                    <div class="solar-cell"></div>
+                </div>
+            </div>
+        </div>
+        <div class="lower-bezel">
+            <div class="model-type">Runs on JQUERY</div>
+            <div class="power-desc">TWO WAY POWER</div>
+        </div>
+        <div class="lcd-screen">
+            <div class="indicator-text">
+                <input type="text" name="shift-indicator" id="shift-indicator" class="shift-indicator">
+                <input type="text" value="Math" readonly class="math-indicator">
+            </div>
+            <input type="hidden" name="equation-lcd" id="equation-lcd" class="equation-lcd" value="">
+            <input type="text" name="expression-lcd" id="expression-lcd" class="expression-lcd" value="" readonly>
+            <input type="text" name="result-lcd" id="result-lcd" class="result-lcd" value="" readonly>
+        </div>
+        <div class="buttons-row">
+            <button class="small-key modifier" type="button" onclick="Shift()">SHF</button>
+            <button class="small-key register-reset" type="button" onclick="ClearMem()">MC</button>
+            <button class="small-key function" type="button" onclick="WriteAlpha('A')">A</button>
+            <button class="small-key function" type="button" onclick="WriteAlpha('B')">B</button>
+            <button class="small-key function math-symbol" type="button" onclick="WriteExp('!')">x!</button>
+        </div>
+        <div class="buttons-row">
+            <button class="small-key function" type="button" onclick="WriteExp('Abs\u0028')">abs</button>
+            <button class="small-key function" type="button" onclick="WriteExp('Sin\u0028')">sin</button>
+            <button class="small-key function" type="button" onclick="WriteExp('Cos\u0028')">cos</button>
+            <button class="small-key function" type="button" onclick="WriteExp('Tan\u0028')">tan</button>
+            <button class="small-key function" type="button" onclick="WriteExp('Log\u0028')">log</button>
+        </div>
+        <div class="buttons-row">
+            <button class="small-key function" type="button" onclick="WriteExp('\u221A\u0028')">&#8730;</button> 
+            <button class="small-key function" type="button" onclick="WriteExp('Min\u0028')">min</button>
+            <button class="small-key function" type="button" onclick="WriteExp('Max\u0028')">max</button>
+            <button class="small-key function" type="button" onclick="WriteAlpha('X')">x</button>
+            <button class="small-key function" type="button" onclick="WriteAlpha('Y')">y</button>
+        </div>
+        <div class="buttons-row">
+            <button class="small-key function" type="button" onclick="WriteExp('Rnd\u0028')">rnd</button>
+            <button class="small-key function math-symbol" type="button" onclick="WriteExp('\u00B2')">x<sup>2</sup></button>
+            <button class="small-key function" type="button" onclick="WriteExp('\u0028')">(</button>
+            <button class="small-key function" type="button" onclick="WriteExp('\u0029')">)</button>
+            <button class="small-key function" type="button" onclick="WriteExp(',')">,</button>
+        </div>
+        <div class="buttons-row">
+            <button class="big-key numpad" type="button" onclick="WriteExp('7')">7</button>
+            <button class="big-key numpad" type="button" onclick="WriteExp('8')">8</button>
+            <button class="big-key numpad" type="button" onclick="WriteExp('9')">9</button>
+            <button class="big-key action-key" type="button" onclick="Delete()">DEL</button>
+            <button class="big-key action-key" type="button" onclick="ClearAll()">AC</button>
+        </div>
+        <div class="buttons-row">
+            <button class="big-key numpad" type="button" onclick="WriteExp('4')">4</button>
+            <button class="big-key numpad" type="button" onclick="WriteExp('5')">5</button>
+            <button class="big-key numpad" type="button" onclick="WriteExp('6')">6</button>
+            <button class="big-key operator" type="button" onclick="WriteExp('\u00d7')">&times;</button>
+            <button class="big-key operator" type="button" onclick="WriteExp('\u00f7')">&divide;</button>
+        </div>
+        <div class="buttons-row">
+            <button class="big-key numpad" type="button" onclick="WriteExp('1')">1</button>
+            <button class="big-key numpad" type="button" onclick="WriteExp('2')">2</button>
+            <button class="big-key numpad" type="button" onclick="WriteExp('3')">3</button>
+            <button class="big-key operator" type="button" onclick="WriteExp('+')">&plus;</button>
+            <button class="big-key operator" type="button" onclick="WriteExp('-')">&minus;</button>
+        </div>
+        <div class="buttons-row">
+            <button class="big-key numpad" type="button" onclick="WriteExp('0')">0</button>
+            <button class="big-key numpad" type="button" onclick="WriteExp('.')">.</button>
+            <button class="big-key numpad" type="button" onclick="WriteExp('\u03C0')">&#960;</button>
+            <button class="big-key numpad" type="button" onclick="WriteExp('Ans')">Ans</button>
+            <button class="big-key operator" type="button" onclick="Solve()">&equals;</button>
+        </div>
+    </div>
+</body>
+</html>
