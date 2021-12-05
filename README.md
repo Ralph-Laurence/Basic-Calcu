@@ -1,7 +1,7 @@
 ## MiniCalc
 
 ### Personal Project
-HTML, CSS, JQuery\
+HTML, CSS, JQuery
 
 + Arithmetic
 + Exponents
