@@ -1,4 +1,4 @@
-## Basic-Calcu
+## MiniCalc
 
 ### Personal Project
 HTML, CSS, JQuery
