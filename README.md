@@ -1,4 +1,4 @@
-## MiniCalc
+## Pocket Calcu
 
 ### Personal Project
 HTML, CSS, JQuery
